@@ -1,0 +1,273 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+html {
+  font-size: 10px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+}
+body {
+  overflow: hidden;
+}
+.logo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #151515;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  opacity: 1;
+  animation: displayCircles 3s ease forwards;
+  animation-delay: 2s;
+}
+.dislogo .logo {
+  opacity: 0;
+  visibility: hidden;
+}
+@keyframes displayCircles {
+  0% {
+    opacity: 1;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.logo img {
+  width: 10rem;
+  height: 10rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.mode {
+  width: 5.2rem;
+  height: 2.4rem;
+  background-color: #fafafa;
+  border-radius: 6rem;
+  position: absolute;
+  right: 4rem;
+  top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 3rem 8rem rgba(0, 0, 0, 0.1);
+  text-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  z-index: 50;
+}
+.active .mode {
+  background-color: #151515;
+  box-shadow: 0 0.3rem 2rem rgba(250, 250, 250, 0.1);
+  transition: all 0.3s ease;
+}
+.mode span {
+  width: 2rem;
+  height: 2rem;
+  background-color: #1a1a1a;
+  border-radius: 6rem;
+  position: absolute;
+  right: 0.3rem;
+  transition: all 0.3s ease;
+}
+.active .mode span {
+  background-color: #fafafa;
+  left: 0.3rem;
+  transition: all 0.3s ease;
+}
+section {
+  width: 100%;
+  height: 100vh;
+  background-color: #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.active section {
+  background-color: #151515;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: 100%;
+  margin: 1rem 0;
+}
+
+.container .display {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #151515;
+  border-top-right-radius: 2rem;
+  border-top-left-radius: 2rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0rem -7rem 3rem 3rem rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.active .container .display {
+  background-color: #fafafa;
+  box-shadow: 0 3rem 8rem rgba(250, 250, 250, 0.1);
+  transition: all 0.3s ease;
+}
+.container .display .dis-1 {
+  color: #5c5c5c;
+  font-size: 1.9rem;
+  top: 25%;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  height: 2rem;
+  overflow: hidden;
+  padding: 0 10px;
+}
+.container .display .dis-3 {
+  color: #5c5c5c;
+  font-size: 1.3rem;
+  left: 15px;
+  position: absolute;
+  bottom: 10px;
+}
+.container .display .dis-2 {
+  color: #ffffff;
+  font-size: 6rem;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  margin-right: 10px;
+}
+.active .container .display .dis-2 {
+  color: #1a1a1a;
+}
+.container .buttons {
+  width: 100%;
+  height: 60%;
+  background-color: #1a1a1a;
+  border-bottom-right-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  display: grid;
+  grid-template: repeat(5, 1fr) / repeat(4, 1fr);
+  grid-gap: 1%;
+  padding: 2rem;
+  box-shadow: 0 3rem 8rem rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.active .container .buttons {
+  background-color: #ffffff;
+  box-shadow: 0 3rem 3rem rgba(250, 250, 250, 0.1);
+  transition: all 0.3s ease;
+}
+.container .buttons .button {
+  font-size: 1.9rem;
+  color: whitesmoke;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
+  /* width: 100%; */
+  transition: all 0.3s ease;
+  /* height: 100%; */
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.active .container .buttons .button {
+  color: #1a1a1a;
+}
+.container .buttons .button:hover {
+  background-color: #2f2f2f;
+}
+.active .container .buttons .button:hover {
+  background-color: #ebebeb;
+}
+.container .buttons .c0 {
+  grid-column: 1 / 3;
+  width: auto;
+  /* margin-right: 2rem; */
+}
+.container .buttons .eq {
+  border-radius: 10rem;
+  background-color: #ff3e39;
+  /* width: 7rem;
+  height: 7rem; */
+  color: #fff;
+}
+/* active */
+
+.active .container .buttons .eq {
+  color: #fff;
+}
+
+.container .buttons .eq:hover {
+  background-color: #fa5f5a;
+}
+.active .container .buttons .eq:hover {
+  background-color: #fa5f5a;
+}
+.container .buttons .imp {
+  color: #5f5f5f;
+}
+.active .container .buttons .imp {
+  color: #5f5f5f;
+}
+.container .buttons .red {
+  color: #ff3e39;
+}
+.active .container .buttons .red {
+  color: #ff3e39;
+}
+
+.colorred {
+  color: #ff3e39;
+}
+@media screen and (max-width: 786px) {
+  .container {
+    height: 100%;
+    width: 100%;
+  }
+
+  .container .display {
+    height: 45%;
+    border-radius: 0;
+  }
+  .container .buttons {
+    height: 55%;
+    border-radius: 0;
+  }
+  .mode {
+    top: 2rem;
+    right: 2rem;
+  }
+  .container .display .dis-1 {
+    /* top: 9rem; */
+    font-size: 2rem;
+  }
+  .container .display .dis-2 {
+    font-size: 6rem;
+  }
+  .container .display .dis-3 {
+    font-size: 1.6rem;
+  }
+  .container {
+    margin: 0 0 0 0;
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+  }
+}
